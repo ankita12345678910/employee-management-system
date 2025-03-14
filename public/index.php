@@ -34,6 +34,9 @@ if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
     chdir(FCPATH);
 }
 
+// Set the environment to development
+define('CI_ENVIRONMENT', 'development');
+
 /*
  *---------------------------------------------------------------
  * BOOTSTRAP THE APPLICATION
