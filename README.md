@@ -20,8 +20,10 @@ composer install
 ```
 
 ### 3. Create Database in MySql
+Run the following query in mysql:
+```sh
 CREATE DATABASE your_database_name;
-
+```
 ### 4. Configure the Environment
 update the database settings in the `.env` file:
 ```env
