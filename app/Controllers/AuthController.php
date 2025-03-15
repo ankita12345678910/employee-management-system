@@ -21,9 +21,10 @@ class AuthController extends BaseController
                     'logged_in' => true
                 ]);
                 // die(var_dump($session->get()));
-                return view('dashboard_view', [
-                    'username' => $session->get('username')
-                ]);
+                // return view('dashboard_view', [
+                //     'username' => $session->get('username')
+                // ]);
+                return redirect()->to(route_to('all_employees', 1));
             } else {
                 $session->setFlashdata('error', 'Invalid Username or Password');
                 return redirect()->to('login');

@@ -124,3 +124,7 @@ nb-configuration.xml
 
 /results/
 /phpunit*.xml
+
+# Ignore employee uploads
+public/uploads/employees/*
+!public/uploads/employees/default.jpg
