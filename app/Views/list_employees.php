@@ -41,11 +41,11 @@
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="list-employee-js">
                 <?php if (!empty($employees)) {
                     $count = $offset; ?>
                     <?php foreach ($employees as $employee) { ?>
-                        <tr>
+                        <tr id="<?= $employee['id'] ?>">
                             <td><?= ++$count ?></td>
                             <td><?= $employee['id'] ?></td>
                             <td><?= $employee['username'] ?></td>
@@ -89,6 +89,7 @@
 
 <script>
     async function deleteEmployee(id) {
+
         const result = await Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -108,8 +109,8 @@
                 await Swal.fire("Deleted!", "Your account has been deleted.", "success");
                 window.location.href = "<?= base_url('login') ?>"; // Redirect to login page
             } else if (data.success) {
+                document.getElementById("list-employee-js").removeChild(document.getElementById(id));
                 await Swal.fire("Deleted!", "Employee has been deleted.", "success");
-                location.reload();
             } else {
                 await Swal.fire("Error!", "Something went wrong.", "error");
             }

@@ -9,8 +9,13 @@ class AuthController extends BaseController
 {
     public function login()
     {
+        $session = session();
+        if ($session->get('logged_in')) {
+            return view('auth/login', [
+                'status' => 'already_logged_in'
+            ]);
+        }
         if ($this->request->getMethod() == 'POST') {
-            $session = session();
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
             $employee = model(LoginDetails::class)->where('user_name', $username)->first();
@@ -30,7 +35,9 @@ class AuthController extends BaseController
                 return redirect()->to('login');
             }
         }
-        return view('auth/login');
+        return view('auth/login', [
+            'status' => 'not_logged_in'
+        ]);
     }
     public function logout()
     {

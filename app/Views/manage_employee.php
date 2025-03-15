@@ -59,7 +59,7 @@
 
                     <button type="submit" class="btn btn-primary w-100"> <?= $id === 'new' ? 'Add Employee' : 'Update Employee' ?> </button>
                 </form>
-                <a href="javascript:history.back()" class="btn btn-secondary mt-2">
+                <a href="<?= route_to('all_employees',1) ?>" class="btn btn-secondary mt-2">
                     ← Back
                 </a>
             </div>

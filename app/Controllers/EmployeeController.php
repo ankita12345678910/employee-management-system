@@ -20,7 +20,7 @@ class EmployeeController extends Controller
     public function manageEmployee($id = 'new')
     {
         $session = session();
-        die(var_dump(!$session->get('logged_in')));
+        // die(var_dump(!$session->get('logged_in')));
         if (!$session->get('logged_in')) {
             return redirect()->to('/login');
         } else {
