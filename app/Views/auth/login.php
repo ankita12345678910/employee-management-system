@@ -12,7 +12,7 @@
                 <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
             <?php endif; ?>
 
-            <form action="<?= base_url('login') ?>" method="post">
+            <form action="<?= base_url('/') ?>" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" name="username" id="username" class="form-control" required>

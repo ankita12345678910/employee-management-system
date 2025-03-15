@@ -22,7 +22,7 @@ class EmployeeController extends Controller
         $session = session();
         // die(var_dump(!$session->get('logged_in')));
         if (!$session->get('logged_in')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         } else {
 
             $data = [];
@@ -109,7 +109,7 @@ class EmployeeController extends Controller
     {
         $session = session();
         if (!$session->get('logged_in')) {
-            return redirect()->to('/login');
+            return redirect()->to('/');
         }
         $db = db_connect();
         $limit = 4;

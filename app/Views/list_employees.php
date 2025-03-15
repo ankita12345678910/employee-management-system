@@ -107,7 +107,7 @@
             const data = await response.json();
             if (data.logout) {
                 await Swal.fire("Deleted!", "Your account has been deleted.", "success");
-                window.location.href = "<?= base_url('login') ?>"; // Redirect to login page
+                window.location.href = "<?= base_url('/') ?>"; // Redirect to login page
             } else if (data.success) {
                 document.getElementById("list-employee-js").removeChild(document.getElementById(id));
                 await Swal.fire("Deleted!", "Employee has been deleted.", "success");

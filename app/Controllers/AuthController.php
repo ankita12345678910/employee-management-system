@@ -32,7 +32,7 @@ class AuthController extends BaseController
                 return redirect()->to(route_to('all_employees', 1));
             } else {
                 $session->setFlashdata('error', 'Invalid Username or Password');
-                return redirect()->to('login');
+                return redirect()->to('/');
             }
         }
         return view('auth/login', [
@@ -42,6 +42,6 @@ class AuthController extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }
